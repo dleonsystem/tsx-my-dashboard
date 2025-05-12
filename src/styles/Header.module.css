@@ -1,0 +1,13 @@
+.header {
+    background-color: #282c34;
+    color: white;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  .subtitle {
+    margin-top: 8px;
+    font-size: 1rem;
+    color: #ccc;
+  }
+  

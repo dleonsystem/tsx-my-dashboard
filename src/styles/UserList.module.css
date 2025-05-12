@@ -1,0 +1,35 @@
+.container {
+    padding: 20px;
+  }
+  
+  .input {
+    padding: 8px;
+    margin-bottom: 16px;
+    width: 100%;
+    max-width: 400px;
+    font-size: 1rem;
+  }
+  .paginador {
+    margin-top: "16px";
+  }
+  .span-paginador {
+ margin: "0 10px";
+  }
+  .table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .th {
+    border-bottom: 2px solid #ddd;
+    text-align: left;
+    padding: 8px;
+    background-color: #f4f4f4;
+    color: darkslategrey
+  }
+  
+  .td {
+    border-bottom: 1px solid #eee;
+    padding: 8px;
+  }
+  
