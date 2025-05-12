@@ -12,6 +12,7 @@ type AuthContextType = {
     isAuthenticated: boolean;
     loading: boolean;
     logout: () => void;
+    setUsuario: (u: Usuario | null) => void;
   };
   
 
@@ -20,6 +21,7 @@ const AuthContext = createContext<AuthContextType>({
   isAuthenticated: false,
   loading: true,
   logout: () => {},
+  setUsuario: () => {},
 });
 
 export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
@@ -44,7 +46,7 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
     };
   
     return (
-      <AuthContext.Provider value={{ usuario, isAuthenticated: !!usuario, loading, logout }}>
+      <AuthContext.Provider value={{ usuario, isAuthenticated: !!usuario, loading, logout, setUsuario }}>
         {children}
       </AuthContext.Provider>
     );

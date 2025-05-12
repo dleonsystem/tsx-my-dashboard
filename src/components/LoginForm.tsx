@@ -4,6 +4,7 @@ import { useMutation } from "@apollo/client";
 import { LOGIN_USUARIO } from "../graphql/mutations/loginUsuario";
 import { useNavigate } from "react-router-dom";
 import styles from "../styles/Login.module.css";
+import { useAuth } from "../context/AuthContext";
 
 type LoginInput = {
   correoElectronico: string;
@@ -11,6 +12,8 @@ type LoginInput = {
 };
 
 const LoginForm: React.FC = () => {
+    const { setUsuario } = useAuth();
+
   const { register, handleSubmit } = useForm<LoginInput>();
   const navigate = useNavigate();
   const [login, { error }] = useMutation(LOGIN_USUARIO);
@@ -23,6 +26,7 @@ const LoginForm: React.FC = () => {
       if (loginData?.status) {
         localStorage.setItem("token", loginData.token);
         localStorage.setItem("usuario", JSON.stringify(loginData.usuario));
+        setUsuario(loginData.usuario); // ✅ actualiza el contexto inmediatamente
         navigate("/");
       } else {
         alert("Login fallido: " + (loginData?.message ?? "Error desconocido"));
