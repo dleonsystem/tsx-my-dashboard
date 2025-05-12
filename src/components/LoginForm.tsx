@@ -24,6 +24,8 @@ const LoginForm: React.FC = () => {
       const loginData = response.data?.login;
 
       if (loginData?.status) {
+        const timestamp = Date.now();
+        localStorage.setItem("tokenTime", timestamp.toString());
         localStorage.setItem("token", loginData.token);
         localStorage.setItem("usuario", JSON.stringify(loginData.usuario));
         setUsuario(loginData.usuario); // ✅ actualiza el contexto inmediatamente
