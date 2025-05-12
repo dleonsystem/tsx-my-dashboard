@@ -1,0 +1,45 @@
+{
+    "home": {
+        "welcome": "Welcome to the Admin Panel",
+        "options": "Choose an option",
+        "option1": "User Management",
+        "option2": "Country Query"
+    },
+    "navbar": {
+        "home": "Home",
+        "users": "Users",
+        "countries": "Countries",
+        "logout": "Logout",
+        "welcome": "Welcome"
+    },
+    "countries": {
+        "titlePage": "Country Query Page",
+        "title": "Country Query",
+        "countryList": "List of Countries",
+        "name": "Name",
+        "capital": "Capital",
+        "population": "Population",
+        "area": "Area",
+        "actions": "Actions",
+        "edit": "Edit",
+        "delete": "Delete",
+        "page": "Page",
+        "next": "Next",
+        "previous": "Previous",
+        "search": "Search a country.."
+    },
+    "users": {
+        "titlePage": "User Management Page",
+        "title": "User Management",
+        "addUser": "Add User",
+        "userList": "User List",
+        "name": "Name",
+        "email": "Email",
+        "role": "Role",
+        "actions": "Actions"
+    },
+    "submit": "Sign In",
+    "login": "Login",
+    "email": "Email",
+    "password": "Password"
+}

@@ -1,0 +1,47 @@
+{
+    "home": {
+        "welcome": "Bienvenido al Panel Administrativo",
+        "options": "Esta es la página de inicio de la aplicación.",
+        "option1": "Gestión de Usuarios",
+        "option2": "Consulta de Países"
+    },
+    "navbar": {
+        "home": "Inicio",
+        "users": "Usuarios",
+        "countries": "Paises",
+        "logout": "Cerrar sesión",
+        "welcome": "Bienvenido"
+    },
+    "users": {
+        "titlePage": "Página de Gestión de Usuarios",
+        "title": "Gestión de Usuarios",
+        "addUser": "Agregar Usuario",
+        "userList": "Lista de Usuarios",
+        "name": "Nombre",
+        "email": "Correo Electrónico",
+        "role": "Rol",
+        "actions": "Acciones",
+        "edit": "Editar",
+        "delete": "Eliminar"
+    },
+    "countries": {
+        "titlePage": "Página de Consulta de Países",
+        "title": "Consulta de Países",
+        "countryList": "Lista de Países",
+        "name": "Nombre del País",
+        "capital": "Capital",
+        "population": "Población",
+        "area": "Área (km²)",
+        "region": "Región",
+        "page": "Página",
+        "next": "Siguiente",
+        "previous": "Anterior",
+        "search": "Buscar un pais.."
+    },
+   
+    "login": "Iniciar sesión",
+    "email": "Correo electrónico",
+    "password": "Contraseña",
+    "submit": "Ingresar"
+  }
+  

@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useQuery } from "@apollo/client";
 import styles from '../styles/UserList.module.css';
 import { GET_COUNTRIES } from "../graphql/getCountries";
+import { useTranslation } from "react-i18next";
 
 
 
@@ -15,6 +16,7 @@ type Country = {
 const ITEMS_PER_PAGE = 10;
 
 const UserList: React.FC = () => {
+  const { t } = useTranslation();
   const { loading, error, data } = useQuery(GET_COUNTRIES);
   const [search, setSearch] = useState("");
   const [currentPage, setCurrentPage] = useState(1);
@@ -38,27 +40,28 @@ const UserList: React.FC = () => {
     setCurrentPage((prev) => Math.min(prev + 1, totalPages));
   };
 
+
   return (
     <div className={styles.container}>
-      <h2>🌍 Lista de Países</h2>
+      <h2>🌍 {t("countries.title")}</h2>
 
       <input
-        type="text"
-        placeholder="Buscar país..."
-        value={search}
-        onChange={(e) => {
-          setSearch(e.target.value);
-          setCurrentPage(1); // Reinicia a la primera página al buscar
-        }}
-        className={styles.input}
+      type="text"
+      placeholder={t("countries.search")}
+      value={search}
+      onChange={(e) => {
+        setSearch(e.target.value);
+        setCurrentPage(1); // Reinicia a la primera página al buscar
+      }}
+      className={styles.input}
       />
 
       <table className={styles.table}>
         <thead>
           <tr>
             <th className={styles.th}>Emoji</th>
-            <th className={styles.th}>Nombre</th>
-            <th className={styles.th}>Capital</th>
+            <th className={styles.th}>{t("countries.name")}</th>
+            <th className={styles.th}>{t("countries.capital")}</th>
           </tr>
         </thead>
         <tbody>
@@ -74,13 +77,13 @@ const UserList: React.FC = () => {
 
       <div className={styles.paginador}>
         <button onClick={handlePrevious} disabled={currentPage === 1}>
-          ⬅️ Anterior
+          ⬅️ {t("countries.previous")}
         </button>
         <span className="{styles.span-paginador}">
-          Página {currentPage} de {totalPages}
+          {t("countries.page")} {currentPage} de {totalPages}
         </span>
         <button onClick={handleNext} disabled={currentPage === totalPages}>
-          Siguiente ➡️
+          {t("countries.next")} ➡️
         </button>
       </div>
     </div>

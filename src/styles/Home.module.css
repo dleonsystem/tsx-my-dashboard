@@ -1,0 +1,40 @@
+.container {
+    width: 100%;
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 3rem 2rem;
+    color: white;
+    text-align: center;
+  }
+  
+  
+  .title {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+  }
+  
+  .options {
+    margin-top: 2rem;
+    font-size: 1.2rem;
+  }
+  
+  .options ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .options li {
+    margin: 1rem 0;
+  }
+  
+  .options a {
+    color: #66ccff;
+    font-weight: 600;
+    text-decoration: none;
+  }
+  
+  .options a:hover {
+    text-decoration: underline;
+  }
+  

@@ -6,10 +6,12 @@ import { ACTUALIZAR_USUARIO } from "../graphql/mutations/actualizarUsuario";
 import UsuarioForm from "./UsuarioForm"; 
 import type { UsuarioInput } from "./UsuarioForm";
 import { DESHABILITAR_USUARIO } from "../graphql/mutations/deshabilitarUsuario";
-
+import styles from "../styles/UsuarioCrud.module.css";
+import { useTranslation } from "react-i18next";
 
 
 const UsuarioCrud: React.FC = () => {
+      const { t } = useTranslation();
   const { data, loading, error, refetch } = useQuery(GET_USUARIOS);
   const [crearUsuario] = useMutation(CREAR_USUARIO);
 const [actualizarUsuario] = useMutation(ACTUALIZAR_USUARIO);
@@ -74,9 +76,9 @@ const [deshabilitarUsuario] = useMutation(DESHABILITAR_USUARIO);
   };
 
   return (
-    <div style={{ padding: "20px" }}>
-      <h2>Gestión de Usuarios</h2>
-      <button onClick={handleCrear}>➕ Crear Usuario</button>
+    <div className={styles.container}>
+      <h2>{t("users.title")}</h2>
+      <button onClick={handleCrear} className={styles.buttonCrear}>➕ {t("users.addUser")}</button>
 
       {modoEdicion && (
         <UsuarioForm
@@ -86,14 +88,14 @@ const [deshabilitarUsuario] = useMutation(DESHABILITAR_USUARIO);
         />
       )}
 
-      <table style={{ width: "100%", marginTop: "20px", borderCollapse: "collapse" }}>
+      <table className={styles.table}>
         <thead>
           <tr>
-            <th>Nombre</th>
-            <th>Correo</th>
+            <th>{t("users.name")}</th>
+            <th>{t("users.email")}</th>
             <th>CURP</th>
-            <th>Rol</th>
-            <th>Acciones</th>
+            <th>{t("users.role")}</th>
+            <th>{t("users.actions")}</th>
           </tr>
         </thead>
         <tbody>
@@ -104,9 +106,9 @@ const [deshabilitarUsuario] = useMutation(DESHABILITAR_USUARIO);
               <td>{usuario.curp}</td>
               <td>{usuario.rol}</td>
               <td>
-                <button onClick={() => handleEditar(usuario)}>✏️ Editar</button>
-                <button onClick={() => handleEliminar(usuario.id!)} style={{ marginLeft: "8px", color: "red" }}>
-    🗑️ Eliminar
+                <button onClick={() => handleEditar(usuario)}  className={styles.btnEditar}>✏️ {t("users.edit")}</button>
+                <button onClick={() => handleEliminar(usuario.id!)}  className={styles.btnEliminar}>
+    🗑️ {t("users.delete")}
   </button>
               </td>
               
