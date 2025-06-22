@@ -1,12 +1,10 @@
+// ecosystem.config.js
 module.exports = {
-  apps: [
-    {
-      name: "vite-app",
-      script: "./server.js",
-      env: {
-        NODE_ENV: "production",
-        PORT: 3010
-      },
-    },
-  ],
+  apps: [{
+    name: "my-dashboard-app",
+    script: "npx",
+    args: "serve dist -s -l 3010",
+    interpreter: "none",
+    exec_mode: "fork",
+  }]
 };
